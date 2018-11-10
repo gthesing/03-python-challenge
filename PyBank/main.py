@@ -1,6 +1,6 @@
 import os
 import csv
-# import subprocess             # prob dont need this
+import subprocess           
 
 path = os.path.join("../Resources/budget_data.csv")
 
@@ -30,8 +30,8 @@ with open(path, newline = '') as BudgetData:
             profit = profit + current
             delta = current - previous
 
-            if row[0] == 1:         #pls dont ask me to explain this
-                change = 0          #was like 5 brewskis deep when I wrote it
+            if row[0] == 1:         
+                change = 0         
             else:
                 change = change + (current - previous)
 
@@ -55,8 +55,10 @@ print(f'Greatest Decrease in Profits: {g_loss_date} (${g_loss})')
 print('---------------------------------------------------------')
 
 
-
-""" 
+ 
 with open("PyBank.txt", "w") as output:
-    subprocess.call(["python", "/main.py" ], stdout=output)
-"""
+    subprocess.call(["python", "main.py" ], stdout=output)
+
+   #^this works when I Ctrl+C out of the
+   # program for some reason???
+

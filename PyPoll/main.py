@@ -1,5 +1,6 @@
 import os
 import csv
+import subprocess
 
 path = os.path.join("../Resources/election_data.csv")
 
@@ -40,3 +41,10 @@ for key, value in d.items():
 print('---------------------------')
 print(f'Winner: {winner}')
 print('---------------------------')
+
+
+with open("PyPoll.txt", "w") as output:
+    subprocess.call(["python", "main.py" ], stdout=output)
+   
+   #^this works when I Ctrl+C out of the
+   # program for some reason???
